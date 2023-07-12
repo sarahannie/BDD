@@ -1,0 +1,8 @@
+{
+  "default": {
+    "paths": ["calcFeatures/calculator.feature"],
+    "require": ["calcFeatures/calcDefinitions/calculator_test.js"],
+    "format": ["html:cucumber-report.html"],
+    "publish": true
+  }
+}
