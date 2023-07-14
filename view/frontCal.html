@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/frontendCal.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+          <div class="display">
+           
+          </div>
+  
+          <div>
+            <div class="input-container">
+              <label>Enter the first value</label>
+              <input type="number" value="{valueOne}" onChange="" />
+            </div>
+            <div class="button-container">
+              <button name="+" onClick={handleButtonClick}>
+                +
+              </button>
+              <button name="-" onClick={handleButtonClick}>
+                -
+              </button>
+              <button name="*" onClick={handleButtonClick}>
+                *
+              </button>
+              <button name="/" onClick={handleButtonClick}>
+                /
+              </button>
+            </div>
+            <div class="input-container">
+              <label>Enter the second value</label>
+              <input
+                type="number"
+                value=""
+                onChange=""
+              />
+            </div>
+          </div>
+          <div class="submit-container">
+            <button name="=" onClick={calculate} class="submit-button">
+              =
+            </button>
+          </div>
+          <div>
+            <p>{message}</p>
+          </div>
+          <div>
+            <h2>Calculation History</h2>
+          </div>
+            <button >Show More</button>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
