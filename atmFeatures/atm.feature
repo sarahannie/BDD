@@ -1,24 +1,19 @@
 Feature: Transact money at ATM
-    As a Bank Owner
-    I want to increase my Clients interactions with their accounts by introducing ATMs
-    Background:
-        Given the client has a valid ATM card
+  As a bank owner
+  I want to increase my clients' interactions with their accounts by introducing ATMs.
 
-    Scenario:Withdraw money from ATM
-        And the client has 10000 UGX in their account
-        And per transaction is 100 UGX
-        When the client inserts their ATM card into the machine
-        And selects the Withdraw option
-        And enters the 5000 UGX
-        Then the ATM should dispense the requested amount
-        And update the client's account balance
+  Rule: 
+    ATM Transactions
 
+  Background:
+    Given that a client has a bank account And a valid debit card
 
-    Scenario:Deposit money into ATM
-        When the client inserts their ATM card into the machine
-        And selects the Deposit option
-        And enters the amount to deposit
-        When put the amount
-        And the atm count the amount
-        Then the ATM should accept the deposit
-        And update the client's account balance
+  @secondwithdrawal
+  Scenario: Withdraw money from ATM
+    When they request to withdraw 500000 UGX from the ATM
+    Then the ATM should dispense 500000 UGX
+
+  @seconddeposit
+  Scenario: Deposit money to ATM
+    When they deposit 500000 UGX into the ATM
+    Then 500000 UGX should be added to their account balance

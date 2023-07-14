@@ -1,8 +1,8 @@
 {
   "default": {
-    "paths": ["calcFeatures/calculator.feature", "atmFeatures/atm.feature"],
-    "require": ["calcFeatures/calcDefinitions/calculator_test.js","atmFeatures/atmDefinitions/atm_test.js"],
-    "format": ["html:cucumber-report.html", "html:atm-report.html"],
+    "paths": [ "atmFeatures/atm.feature"],
+    "require": ["atmFeatures/atmDefinitions/atm_test.js"],
+    "format": [ "html:atm-report.html"],
     "publish": true
   }
 }
