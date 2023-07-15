@@ -67,14 +67,14 @@ button{
     border-color: #337cac;
     color: #fff;
     height: 100%;
-    grid-area: 2 / 4 / 1 / 4;
+    grid-area: 3 / 4 / 3 / 4;
   }
  .equal-sign {
     background-color: #2e86c0;
     border-color: #337cac;
     color: #fff;
     height: 100%;
-    grid-area: 3 / 4 / 5 / 4;
+    grid-area: 4 / 4 / 6 / 4;
   }
   .equal-sign1:hover{
     color: #000;
