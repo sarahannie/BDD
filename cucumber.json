@@ -1,7 +1,13 @@
 {
-  "default": {
+  "profile1": {
     "paths": [ "atmFeatures/atm.feature"],
     "require": ["atmFeatures/atmDefinitions/atm_test.js"],
+    "format": [ "html:atm-report.html"],
+    "publish-quiet": true
+  },
+  "default": {
+    "paths": [ "frontCalFeatures/frontCal.feature"],
+    "require": ["frontCalFeatures/frontCalDefinitions/frontCal_test.js"],
     "format": [ "html:atm-report.html"],
     "publish": true
   }
