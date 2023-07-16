@@ -16,7 +16,7 @@ the frontend was test with Selenium
 while the backend was tested with Cucumber,js
 
 ## Step on installation
-npm init -y
+npm init -y <br>
 npm install selenium-webdriver @cucumber/cucumber chai chromedriver
 
 
