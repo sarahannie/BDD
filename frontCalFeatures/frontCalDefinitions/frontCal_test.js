@@ -1,187 +1,61 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const assert = require('assert');
 
+const { Given, When, Then, After } = require('@cucumber/cucumber');
+const { Builder, By, Key, until } = require('selenium-webdriver');
+const { expect } = require('chai');
+require("chromedriver");
+
+let driver;
 let calculator;
-let result;
 
-
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         
-           return 'pending';
-         });
+Given('I have opened the calculator webpage', async function () {
+  // Set up Selenium WebDriver
+  driver = await new Builder().forBrowser('chrome').build();
+  await driver.get('http://127.0.0.1:5500/view/frontCal.html');
 
   
+});
 
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
+When('I enter {string} in the calculator', async function (number) {
+  for (const digit of number) {
+    await driver.findElement(By.css(`button[value="${digit}"]`)).click();
+  }
+});
 
+When('I click the addition button', async function () {
+  await driver.findElement(By.css('button[value="+"]')).click();
+});
 
+When('I click the subtraction button', async function () {
+  await driver.findElement(By.css('button[value="-"]')).click();
+});
 
-         When('I press the addition button', function () {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
+When('I click the multiplication button', async function () {
+  await driver.findElement(By.css('button[value="*"]')).click();
+});
 
-   
+When('I click the division button', async function () {
+  await driver.findElement(By.css('button[value="/"]')).click();
+});
 
-         Then('the result should be {int} on the screen', function (int) {
-         // Then('the result should be {float} on the screen', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
+When('I click the remainder button', async function () {
+  await driver.findElement(By.css('button[value="%"]')).click();
+});
 
+When('I click the exponential button', async function () {
+  await driver.findElement(By.css('button[value="**"]')).click();
+});
 
+When('I click the equals button', async function () {
+  await driver.findElement(By.css('button[value="="]')).click();
+});
 
+Then('the result should be {string} on the display', async function (expectedResult) {
+  const display = await driver.findElement(By.className('display'));
+  const result = await display.getAttribute('value');
+  expect(result).to.equal(expectedResult);
+});
 
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-         When('I press the subtraction button', function () {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-         Then('the result should be {int} on the screen', function (int) {
-         // Then('the result should be {float} on the screen', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-  
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-   
-
-         When('I press the multiplication button', function () {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-         Then('the result should be {int} on the screen', function (int) {
-         // Then('the result should be {float} on the screen', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
- 
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-         When('I press the division button', function () {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-
-         Then('the result should be {int} on the screen', function (int) {
-         // Then('the result should be {float} on the screen', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-
-         When('I press the remainer button', function () {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-
-         Then('the result should be {int} on the screen', function (int) {
-         // Then('the result should be {float} on the screen', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-  
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
-  
-
-         Given('I have entered the number {int} into the calculator', function (int) {
-         // Given('I have entered the number {float} into the calculator', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
- 
-
-         When('I press the exponential button', function () {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
-
- 
-
-         Then('the result should be {int} on the screen', function (int) {
-         // Then('the result should be {float} on the screen', function (float) {
-           // Write code here that turns the phrase above into concrete actions
-           return 'pending';
-         });
+After(async function () {
+  // Quit the driver and close the browser
+  await driver.quit();
+});

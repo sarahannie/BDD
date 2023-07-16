@@ -1,41 +1,49 @@
-Feature: Front_end Calculator
+Feature: Frontend Calculator
   In order to perform calculations
   As a user
-  I want to be able to add, subtract, multiply, divide, exponential and remain numbers
-
+  I want to be able to add, subtract, multiply, divide, calculate exponential, and get the remainder
 
   Background:
-    Given I have entered the number 10 into the calculator
-    Given I have entered the number 5 into the calculator
+    Given I have opened the calculator webpage
 
-
-  @add
   Scenario: Add two numbers
-    When I press the addition button
-    Then the result should be 15 on the screen
+    When I enter "10" in the calculator
+    And I click the addition button
+    And I enter "5" in the calculator
+    And I click the equals button
+    Then the result should be "15" on the display
 
-  @subtract
-  Scenario:
-    When I press the subtraction button
-    Then the result should be 5 on the screen
-    
-  @multiply
-  Scenario:
-    When I press the multiplication button
-    Then the result should be 50 on the screen
+  Scenario: Subtract two numbers
+    When I enter "10" in the calculator
+    And I click the subtraction button
+    And I enter "5" in the calculator
+    And I click the equals button
+    Then the result should be "5" on the display
 
+  Scenario: Multiply two numbers
+    When I enter "10" in the calculator
+    And I click the multiplication button
+    And I enter "5" in the calculator
+    And I click the equals button
+    Then the result should be "50" on the display
 
-  @divide
-  Scenario:
-    When I press the division button
-    Then the result should be 2 on the screen
+  Scenario: Divide two numbers
+    When I enter "10" in the calculator
+    And I click the division button
+    And I enter "5" in the calculator
+    And I click the equals button
+    Then the result should be "2" on the display
 
-  @remainer
-  Scenario:
-    When I press the remainer button
-    Then the result should be 0 on the screen
+  Scenario: Get the remainder of two numbers
+    When I enter "10" in the calculator
+    And I click the remainder button
+    And I enter "5" in the calculator
+    And I click the equals button
+    Then the result should be "0" on the display
 
-  @exponential
-  Scenario:
-    When I press the exponential button
-    Then the result should be 100000 on the screen
+  Scenario: Calculate exponential of a number
+    When I enter "10" in the calculator
+    And I click the exponential button
+    And I enter "5" in the calculator
+    And I click the equals button
+    Then the result should be "100000" on the display
