@@ -22,3 +22,7 @@ npm install selenium-webdriver @cucumber/cucumber chai chromedriver
 
 # to start the test
 npm test
+
+# Calculator Image
+<img src="img1.png"/>
+
