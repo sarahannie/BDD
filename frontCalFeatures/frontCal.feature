@@ -7,11 +7,11 @@ Feature: Frontend Calculator
     Given I have opened the calculator webpage
 
   Scenario: Add two numbers
-    When I enter "10" in the calculator
+    When I enter "20" in the calculator
     And I click the addition button
     And I enter "5" in the calculator
     And I click the equals button
-    Then the result should be "15" on the display
+    Then the result should be "25" on the display
 
   Scenario: Subtract two numbers
     When I enter "10" in the calculator
